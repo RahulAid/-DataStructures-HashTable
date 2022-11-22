@@ -39,6 +39,28 @@ public class MyMapNode<K, V>
         linkedList.AddLast(item);
     }
 
+    public void Remove(K key)
+    {
+        int position = GetArrayPosition(key);
+        LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
+        bool itemFound = false;
+        KeyValue<K, V> foundItem = default(KeyValue<K, V>);
+        foreach (KeyValue<K, V> item in linkedList)
+        {
+            if (item.Key.Equals(key))
+            {
+                itemFound = true;
+                foundItem = item;
+            }
+        }
+        if (itemFound)
+        {
+            linkedList.Remove(foundItem);
+            Console.WriteLine();
+            Console.WriteLine($"Removed : index {key}\n");
+        }
+    }
+
     protected LinkedList<KeyValue<K, V>> GetLinkedList(int position)
     {
         LinkedList<KeyValue<K, V>> linkedList = items[position];
@@ -69,7 +91,7 @@ public class MyMapNode<K, V>
                     count++;
                 }
             }
-            Console.WriteLine(arr[i] + " occured " + count + " times ");
+            Console.WriteLine(arr[i] + " => repeated " + count + " times ");
         }
     }
 }

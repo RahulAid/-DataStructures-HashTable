@@ -7,6 +7,7 @@
             Console.WriteLine("Welcome to Hash Tables\n");
 
             MyMapNode<int, string> hash = new MyMapNode<int, string>(19);
+
             hash.Add(0, "Paranoids");
             hash.Add(1, "are");
             hash.Add(2, "not");
@@ -27,6 +28,7 @@
             hash.Add(17, "avoidable");
             hash.Add(18, "situations");
 
+
             for (int i = 0; i < hash.size; i++)
             {
                 Console.WriteLine($"{i} index value : {hash.Get(i)}");
@@ -41,6 +43,15 @@
             }
 
             hash.FreqOfWords(arr, arr.Length);
+
+            Console.WriteLine("\nRemoving a Word from Paragraph ");
+            
+            hash.Remove(17);
+
+            for (int i = 0; i < hash.size; i++)
+            {
+                Console.WriteLine($"{i} index value : {hash.Get(i)}");
+            }
 
             Console.ReadLine();
         }

@@ -69,7 +69,7 @@ public class MyMapNode<K, V>
                     count++;
                 }
             }
-            Console.WriteLine(arr[i] + " ocuured " + count + " times ");
+            Console.WriteLine(arr[i] + " occured " + count + " times ");
         }
     }
 }
